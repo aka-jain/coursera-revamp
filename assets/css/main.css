@@ -1,0 +1,133 @@
+body {
+	font-family: 'Roboto';
+	background: #252525;
+}
+ul li {
+	display: inline-block;
+	margin-left: 40px;
+	cursor: pointer;
+}
+ul li a {
+	font-family: 'Geo';
+	font-size: 0.8em;
+	color: #9d9d9d;
+	transition: all 0.2s ease-in-out;
+}
+ul li:hover a {
+	color: #184b85;
+}
+.clear {
+	clear: both;
+}
+.push-right {
+	float: right;
+}
+.push-left {
+	float: left;
+}
+.home-back {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+}
+.back-img {
+	position: fixed;
+	z-index: -1;
+	width: 100vw;
+	height: 100vh;
+	background-image: url(../images/index-back.jpg);
+	background-size: cover;
+	background-position: center;
+	opacity: 0.3;
+}
+.details-container {
+	padding: 20px 60px 40px 60px;
+}
+#icon {
+	width: 120px;
+}
+header ul {
+	text-align: right
+}
+header ul li {
+	position: relative;
+	height: 20px;
+}
+.link-line {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	display: block;
+	width: 0px;
+	height: 2px;
+	background-color: #184b85;
+	margin-right: auto;
+	margin-left: auto;
+	left: 0px;
+	right: 0px;
+	transition: all 0.2s ease-in-out;
+}
+header ul li:hover .link-line {
+	width: 100%;
+}
+
+/*search container styles============*/
+
+.search-container {
+	display: block;
+	margin-top: 160px;
+	text-align: center;
+}
+
+
+.title h2 {
+	color: #E9B361;
+	font-size: 1.5em;
+	padding-top: 5px;
+}
+.title input {
+	display:inline-block;
+	margin-top: 10px;
+	height: 40px;
+	padding-left: 5px;
+	width: 600px;
+	color: #fff;
+	border: 0px;
+	border-bottom: 1px solid #fff;
+	background: rgba(0, 0, 0, 0);
+	font-size: 1em;
+	font-family: 'Roboto Medium';
+
+	transition:all 0.2s ease-in-out;
+}
+.title input:focus{
+	border-bottom: 1px solid #E9B361
+}
+.title input .search-details {
+	width: calc(100% - 500px);
+}
+.title i{
+	margin-left: -24px;
+	color: #d2d2d2;
+	cursor: pointer;
+	transition:all 0.2s ease-in-out;
+}
+.title input:focus ~ i{
+	color: #fff;
+}
+::-webkit-input-placeholder {
+   color: #d2d2d2;
+   font-size: 'Roboto'
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #d2d2d2;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #d2d2d2;  
+}
+
+:-ms-input-placeholder {  
+   color: #d2d2d2;  
+}
