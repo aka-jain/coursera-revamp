@@ -3,6 +3,10 @@ app.controller('home', ['$scope','partData','instData','courseData','content', f
 
 
 
+// console.log($scope.topic)
+	$scope.search_topic=function(){
+		// console.log($scope.topic)
+	}
 
 	partData.success(function(data){
 		$scope.partners=data;
@@ -41,6 +45,21 @@ app.controller('home', ['$scope','partData','instData','courseData','content', f
 		
 
 	}
+
+
+	
+
+	// for(i in $scope.val.elements){
+	// 	var name=$scope.val.elements[i].name;
+	// 	console.log(name);
+	// 	if(angular.lowercase($scope.topic).indexOf(angular.lowercase(name))>=0){
+	// 		alert("");
+	// 		break;
+	// 	}
+	// 	// console.log($scope.val.elements[i].name)
+	// }
+
+
 	});
 	content.success(function(data){
 		$scope.cont=data;
@@ -142,13 +161,51 @@ app.controller('home', ['$scope','partData','instData','courseData','content', f
 		},300)
 	});
 
+	angular.element(".left-spec-related").click(function(){
+		angular.element(".spec-outer-related").animate({
+			scrollLeft: "-=180"
+		},300)
+	});
+	angular.element(".right-spec-related").click(function(){
+		angular.element(".spec-outer-related").animate({
+			scrollLeft: "+=180"
+		},300)
+	});
+
+
 
 	angular.element(".specialization-inner ul li").click(function(){
 		angular.element(this).siblings().removeClass("active-list");
 		angular.element(this).addClass("active-list")
 	})
 
-	$scope.api_search=$scope.topic;
-	console.log($scope.topic);
-	
+		angular.element(".cross-slide").hide();
+
+	angular.element(".slider i").click(function(){
+		angular.element(".filter-search").css({
+			'height':'600px',
+			'width':'100%',
+			'top':'70px',
+			'left':'0px',
+			'padding':'20px 40px' ,
+			'border-radius':'0px'
+
+		})
+
+		angular.element(".slider ").hide();
+		angular.element(".cross-slide").fadeIn();
+	})
+
+	angular.element(".cross-slide i").click(function(){
+		angular.element(".filter-search").css({
+			'height':'0px',
+			
+			'padding':'0px'
+
+		})
+
+		angular.element(".slider ").fadeIn();
+		angular.element(".cross-slide").hide();
+	})
+
 }])
