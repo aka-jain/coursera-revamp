@@ -17,7 +17,7 @@ ul li a {
 	transition: all 0.2s ease-in-out;
 }
 
-ul li:hover a {
+ul li a:hover {
 	color: #E9B361;
 }
 
@@ -33,10 +33,10 @@ ul li:hover a {
 	float: left;
 }
 
-.home-back {
+#home-back {
 	width: 100vw;
 	height: 100vh;
-	z-index: 1;
+	z-index: -1;
 	background: #000;
 	top: 0px;
 	position: absolute;
@@ -44,8 +44,8 @@ ul li:hover a {
 }
 
 .back-img {
-	position: absolute;
-	z-index: -1;
+	position: fixed;
+	z-index: -20;
 	width: 100vw;
 	height: 100vh;
 	background-image: url(../images/index-back.jpg);
@@ -68,7 +68,7 @@ ul li:hover a {
 
 header {
 	height: 100vh;
-	position: absolute;
+	position: fixed;
 	right: 0px;
 	display: flex;
 	flex-direction: column;
@@ -86,6 +86,19 @@ header ul li {
 	font-size: 0.9em;
 	margin: 20px 0px;
 	position: relative;
+
+}
+#one{
+	transition:all 0.2s ease-in-out;
+}
+#two{
+	transition:all 0.4s ease-in-out;
+}
+#three{
+	transition:all 0.6s ease-in-out;
+}
+#four{
+	transition:all 0.8s ease-in-out;
 }
 
 .link-line {
@@ -117,45 +130,48 @@ header ul li:hover .link-line {
 	/*float: left;*/
 }
 
+
 .title h2 {
 	color: #fff;
 	font-size: 1.5em;
 	padding-top: 10px;
 }
 
-.title input {
+ input {
 	display: inline-block;
 	margin-top: 10px;
 	height: 42px;
 	padding-left: 10px;
-	width: 580px;
-	color: #4d4d4d;
+	width: 560px;
+	color: #fff;
 	border: 0px;
 	/*border-bottom: 1px solid #fff;*/
 	background: rgba(255, 255, 255, 0.3);
 	border-radius: 2px;
 	font-size: 1em;
 	font-family: 'Roboto';
+	font-weight: 400;
 	transition: all 0.2s ease-in-out;
 }
 
-.title input:focus {
+ input:focus {
 	/*border-bottom: 1px solid #E9B361*/
+	color: #252525;
 	background: rgba(255, 255, 255, 1);
 }
 
-.title input .search-details {
+ input .search-details {
 	width: calc(100% - 500px);
 }
 
-.title i {
+.title i, .search-hor i{
 	margin-left: -28px;
 	color: #d2d2d2;
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
 }
 
-.title input:focus ~ i {
+input:focus ~ i {
 	color: #4d4d4d;
 }
 
@@ -163,16 +179,16 @@ header ul li:hover .link-line {
 	width: 100%;
 }
 
-.title input:focus::-webkit-input-placeholder {
+ input:focus::-webkit-input-placeholder {
 	color: #9d9d9d;
 	font-size: 'Roboto'
 }
 
-.title input:focus::-moz-placeholder {
+ input:focus::-moz-placeholder {
 	color: #d2d2d2;
 }
 
-.title input:focus:-ms-input-placeholder {
+ input:focus:-ms-input-placeholder {
 	color: #d2d2d2;
 }
 
@@ -232,69 +248,345 @@ header ul li:hover .link-line {
 	}
 }
 
+/*second header (horizontal)*/
 
-/*section 2 style==============*/
-
-.institutes-list {
-	height: 110vh;
-	width: 100%;
-	background: #f9f9f9;
-	position: relative;
-}
-
-.institutes-outer {
-	margin-top: 100px;
-	width: 100vw;
-	height: 200px;
-	background: rgba(0, 0, 0, 0);
-	/*	box-shadow: 0px 0px 4px #9d9d9d;*/
-	overflow-x: scroll;
+.header-sec{
 	display: block;
-	border: 1px solid red;
-}
-
-.institutes-inner {
-	display: block;
-	height: 200px;
-	margin-top: 40px;
-}
-
-.institutes-inner ul li {
-	display: inline-block;
-	padding: 20px;
-	float: left;
-	border-radius: 2px;
-	box-shadow: 1px 1px 2px #9d9d9d;
-	background: #fff;
-}
-
-
-/*second header*/
-
-.sec-header {
-	display: block;
-	position: fixed;
-	top: 0px;
+	top: -100px;
 	width: 100vw;
 	padding: 20px 40px;
-	background: rgba(0, 0, 0, 0.8);
-}
+	position: fixed;
+	z-index: 4;
+	background: rgba(0,0,0,0.9);
+	transition:all 0.4s ease-in-out;
 
-.sec-logo {
-	height: 30px;
 }
-
-.sec-logo img {
+.move-sec-header{
+	top: 0px;
+}
+.logo-hor{
+	/*height: 30px;*/
+	margin-top: 5px;
+	height: 30px;	
+}
+.logo-hor img{
 	height: 100%;
 }
-
-.sec-header ul {
+.search-hor{
+	text-align: center;
+}
+.search-hor input{
+	font-size: 0.85em;
+	margin-top: 0px;
+	width: 100%;
+	font-family: 'Roboto';
+	font-weight: 400;
+}
+.search-hor  i{
+	font-size: 0.9em;
+}
+.header-sec ul{
 	float: right;
-	text-align: right;
+	margin-top: 12px;
+}
+.header-sec ul li{
+	margin-left: 20px;
+}
+.header-sec ul li a{
+	font-size: 0.75em;
 }
 
-.sec-header ul li {
+/*section 2styling*/
+
+
+
+.desktop{
+	display: block;
+}
+.mobile{
+	display: none;
+}
+.header-sec-mob{
+	position: fixed;
+	z-index: 4;
+	top: 0px;
+	width: 100%;
+	padding:20px 40px;
+	background: rgba(0,0,0,0.9);
+	overflow: scroll;
+}
+
+.bars,.cross{
+	text-align: right;
+	font-size: 1.5em;
+	color: #fff;
+	margin-top: 4px;
+}
+.header-sec-mob .search-hor{
+	
+	margin-top: -100px;
+	transition:all 0.4s ease-in-out;
+}
+.header-sec-mob .header-sec-mob-top{
 	margin-top: 10px;
+}
+.mob-menu{
+	height: 0px;
+	overflow: hidden;
+	transition:all 0.3s ease-in-out;
+}
+.mob-menu ul li{
+	height: 0px;
+	display: block;
+	text-align: center;
+	margin: 30px 20px;
+	overflow: hidden;
+	transition:all 0.4s ease-in-out;
+
+}
+.mob-menu ul li a{
+	font-size: 1em;
+}
+
+/*section 2*/
+#sec-2{
+	margin-top: 100vh;
+	display: block;
+	padding: 40px 40px ;
+	position: relative;
+	background: #f9f9f9;
+}
+#sec-2 h2{
+	font-family: 'Geo';
 	font-size: 0.9em;
-	/*	background: #fff;*/
+	color: #4d4d4d;
+	margin-bottom: 20px;
+
+}
+
+/*Top institute */
+
+.institute-outer,.spec-outer{
+	width: 100%;
+	height: 140px;
+	position: relative;
+	display: block;
+	overflow-x:scroll;
+
+}
+.institute-inner{
+	display: block;
+	width:1600px;
+	height: 120px;
+	padding-top: 5px;
+	margin-right: 40px;
+	/*margin-top: 20px;*/
+	overflow-x: scroll;
+	background: transparent;
+}
+.institute-inner ul li{
+	display: inline-block;
+	float: left;
+	height: 100px;
+	border-radius: 2px;
+	margin-right: 20px;
+	padding: 20px 20px;
+	text-align: center;
+	transition:all 0.2s ease-in-out;
+	padding-top: 35px;
+
+}
+.institute-inner ul li:hover{
+	background: #fff;
+	box-shadow: 0px 0px 6px #9d9d9d;
+}
+.dir,.spec-dir{
+	position: absolute;
+	z-index: 1;
+	
+	/*top: 0px;
+	left: 0px;*/
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	color: #fff;
+	font-size: 0.9em;
+	text-align: center;
+	padding-top: 12px;
+	margin-top: 35px;
+	background: rgba(0,0,0,0.6);
+	transition:all 0.2s ease-in-out;
+	cursor: pointer;
+}
+.spec-dir{
+	margin-top: 55px;
+}
+.dir:hover,.spec-dir:hover{
+	background: rgba(0,0,0,0.9);
+}
+.right{
+	right: 40px;
+}
+.right-spec{
+	right: 60px;
+}
+.specialization-container{
+	display: block;
+	width: 100%;
+	background: #fff;
+	box-shadow: 0px 0px 6px #9d9d9d;
+	padding: 30px 20px;
+	border-radius: 2px;
+	margin-bottom: 40px;
+}
+
+
+/*specialization*/
+
+.specialization-inner{
+	width: 1850px;
+	height: 140px;
+}
+
+.specialization-inner ul li{
+	display: inline-block;
+	margin-top: 4px;
+	width: 130px;
+	height: 130px;
+	border-radius: 2px;
+	background: #000;
+	float: left;
+	overflow: hidden;
+	opacity: 0.3;
+	transition:all 0.2s ease-in-out;
+}
+.specialization-inner ul li.active-list,
+.specialization-inner ul li:hover{
+	opacity: 1;
+	box-shadow: 0px 0px 4px #4d4d4d;
+}
+.specialization-inner ul li img{
+	height: 100%;
+}
+.spec-details{
+	color: #252525 ;
+	margin-top: 25px;
+}
+.spec-details h2{
+	color: #252525 !important;
+}
+
+h2.university-name{
+	font-size: 1em;
+	font-family: 'Roboto' !important;
+	font-weight: 500;
+	color: #9d9d9d  !important;
+	margin-top: -15px;
+}
+p{
+	font-size: 1em;
+	line-height: 18px;
+	color: #252525;
+}
+.bottom-details{
+	margin-top: 20px;
+
+}
+.bottom-details span{
+	font-family: 'Geo';
+	font-size: 0.8em;
+	color: #9d9d9d;
+}
+.bottom-details span a{
+	/*font-size: 0.8em;*/
+	color: #9d9d9d;
+	transition:all 0.2s ease-in-out;
+}
+.bottom-details span a:hover{
+	color: #E9B361;
+}
+
+/*related courses*/
+
+.dark{
+	background: #252525;	
+}
+.dark .specialization-inner ul li{
+	box-shadow: 0px 0px 6px #000;
+	/*opacity: 0.3;*/
+}
+h2.light,.light{
+	font-family: 'Roboto Light';
+	font-weight: 400;
+	color: #fff !important;
+}
+
+
+/*footer*/
+
+footer {
+	position: relative;
+	text-align: center;
+	padding: 40px 0px 0px 0px ;
+	background: rgba(0,0,0,0.8);
+	border-top: 1px solid #9d9d9d;
+}
+.footer-bottom{
+	display: block;
+	background: #131313;
+	width: 100%;
+	/*height:40px;*/
+	text-align: right;
+	padding: 15px 40px;
+	color: #9d9d9d;
+	font-size: 0.8em;
+}
+footer h3{
+	color: #9d9d9d;
+	font-size: 0.7em;
+}
+footer ul li{
+	display: block;
+	margin: 20px 0px;
+}
+footer ul li a{
+	font-size: 0.7em;
+	color: #f9f9f9;
+}
+/*media queries*/
+
+
+@media(max-width: 780px){
+	.desktop{
+	display: none;
+}
+.mobile{
+	display: block;
+}
+
+	.title input{
+		width: 100%;
+		margin-left: -12px;
+	}
+	header{
+		display: none;
+	}
+	.details-container{
+		padding: 20px 40px;
+	}
+	.search-container,.title{
+		text-align: center;
+	}
+
+	.title h2{
+		font-size: 1.2em;
+	}
+
+	.details-container{
+		width: 100vw;
+	}
+	.logo-hor{
+		height: 25px;
+	
+	}
 }

@@ -215,6 +215,7 @@ a:hover {
 	/*    position: absolute;*/
 	/*    z-index: 100;*/
 	width: 4px;
+	height: 0px;
 }
 
 ::-webkit-scrollbar-track {
