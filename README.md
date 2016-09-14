@@ -11,8 +11,13 @@ Steps:<br>
 5. In your browser just enter your network IP Addressa with port 8000<br>
 6. And the app will run<br><br>
 
+#Main Page
+<img src="https://github.com/aka-jain/jainakash.in/blob/master/static/images/c1.jpg">
 
-API used : <br>
+#Search Page
+<img src="https://github.com/aka-jain/jainakash.in/blob/master/static/images/c2.jpg">
+
+#API used 
 <br>Courses: https://api.coursera.org/api/courses.v1
-<br>Partners: https://api.coursera.org/api/partners.v1
+<br>Partners: https://api.coursera.org/api/partners.v1<br>
 Instructors: https://api.coursera.org/api/instructors.v1
